@@ -1296,3 +1296,312 @@ console.log(updateRecords(5439, "artist", "ABBA"));
 
 
 //
+//Loops allow you to run the same code multiple times.
+
+/* Iterate with While Loops
+-While Loops runs while a specified condition is true & stops when it's no longer true.
+*/
+
+var myArray = [];
+
+var i = 0;
+while(i < 5) {
+    myArray.push(i);
+    i ++;
+}
+console.log(myArray);
+
+
+/* Iterate with For Loops
+-Most common type of loop in JS
+*/
+
+var ourArray = [];
+
+for (var i = 0; i < 5; i++) {
+    ourArray.push(i);
+}
+
+console.log(ourArray);
+
+
+// Iterate Odd Numbers with a For Loop
+
+
+var myArray = [];
+for (var i =1; i < 10; i +=2) {
+    myArray.push(i)
+}
+
+console.log(myArray);
+
+
+// Iterate Even Numbers with a For Loop
+
+var ourArray = [];
+for (i = 0; i < 10; i +=2) {
+    ourArray.push(i)
+}
+console.log(ourArray);
+
+
+
+// Count backwards with a For Loop
+var ourArray = [];
+for (i = 10; i > 0; i -=2) {
+    ourArray.push(i)
+}
+console.log(ourArray);
+
+
+/* Iterate Through an Array with a For Loop
+-Common in JS to iterate through the contents of an array.
+*/
+
+var ourArr = [ 9, 10, 11, 12];
+var ourTotal = 0;
+for (var i = 0; i < ourArr.length; i++) {
+    ourTotal += ourArr[i];
+}
+console.log(ourTotal);
+
+
+
+
+var myArr = [2,3,4,5,6];
+var total = 0;
+for (var i =0; i <myArr.length; i++) {
+    total +=myArr[i];
+}
+
+console.log(total);
+
+
+
+/* Nesting For Loops
+-If you have a multidimensional or nested array, you can use nested for loops to access all the array elements.
+-Multidimensional array is an array with  arrays inside the array.
+*/
+
+function multiplyAll(arr) {
+    var product = 1;
+
+    for (var i=0; i< arr.length; i++) {
+        for (var j=0; j < arr[i].length; j++) {
+            product *= arr [i][j];
+        }
+    }
+
+    return product;
+}
+
+var product = multiplyAll([[1,2], [3,4], [5,6,7]]);
+console.log(product);
+
+
+
+
+
+/* Iterate with Do.... While Loops
+-A Do While Loop will always run at least one time and then it will check the condition.
+-Will repeat the loop as long as the condition is true.
+*/
+
+var myArray = [];
+var i = 10;
+
+do {
+    myArray.push(i);
+    i++;
+} while(i < 5)
+
+console.log(i, myArray);
+
+
+
+/*Profile Lookup: Coding Challenge
+-An array of objects in our contacts list
+-Each object is one of our contacts.
+-Create lookUpProfile function where we pass in a name of the property & will return value of that property.
+-If the name that's passed in does not corespond to any contacts, then it should return "No such contact".
+-If no property should return "No Such Property".
+*/
+
+var contacts = [
+    {
+        "firstName": "Zach",
+        "lastName": "Lavine",
+        "number": "8",
+        "likes": ["Pizza", "Coding", "Brownies"]
+    },
+    {
+        "firstName": "Demar",
+        "lastName": "DeRozan",
+        "number": "11",
+        "likes": ["Tacos", "Running", "Cookies"]
+    },
+    {
+        "firstName": "Lonzo",
+        "lastName": "Ball",
+        "number": "0",
+        "likes": ["Wings", "Gaming", "Cake"]
+    }
+];
+function lookUpProfile(name, prop) {
+    for (var i = 0; i < contacts.length; i ++) {
+        if (contacts[i].firstName === name){
+            return contacts[i][prop]
+        }
+    }
+    return "No such contact";
+}
+var data = lookUpProfile("Zach" , "number");
+console.log(data);
+
+
+
+
+/* Generate Random Fractions
+-Create a random deciaml number in JS.
+-Always a # between 0 & 1. Could be 0, just not 1.
+*/
+
+function randomFraction() {
+
+
+    return Math.random();
+}
+
+console.log(randomFraction());
+
+
+/* Generate Random Whole Numbers
+-Always a # between 0 & number you enter. Could be 0, just not 1.
+*/
+
+function randomWholeNum() {
+    return Math.floor(Math.random() * 10);
+}
+
+console.log(randomWholeNum());
+
+
+/* Generate Random Whole Numbers within a Range
+
+*/
+
+function randomRange(myMin, myMax) {
+    return Math.floor(Math.random() * (myMax - myMin +1)) + myMin;
+}
+
+var myRandom = randomRange(5,15);
+
+console.log(myRandom);
+
+
+/* Use the parseInt Function
+-Takes a string and returns an integer.
+-If string can't be converted into an integer then it returns in NaN(Not a Number)
+*/
+
+function convertToInteger(str) {
+    return parseInt(str);
+}
+
+console.log(convertToInteger("56")); 
+
+
+
+/* Use the parseInt Function with a Radix
+-Radix specifies the base of the number in the string.
+-Base 2 binary(binary one of the most common ones to use). Default is base 10.
+*/
+
+function convertToInteger(str) {
+    return parseInt(str, 2);
+}
+
+console.log(convertToInteger("10011"));
+
+
+
+/* Use the Conditional (Ternary) Operator
+-Like a one line if else expression.
+conditon ? statement-if-true : statement-if-false;
+*/
+
+function checkEqual(a,b) {
+    return a === b ? true : false;
+}
+
+// you really wouldn't write this out. Would write return a ===n;
+
+console.log(checkEqual(1,2));
+
+/* Use Multiple Conditional (Ternary) Operators
+-can nest them within each other which gives them even more power.
+conditon ? statement-if-true : statement-if-false;
+*/
+
+function checkSign(num) {
+    return num > 0 ? "positive" : num < 0 ? "negative" : "zero";
+}
+console.log(checkSign(10));
+
+
+
+/* Differences between the Var and Let keywords
+-Let does not you declare a variable twice.
+-Many people only use let & const and never use var to declare vairables.
+-Usually dont want to declare a variable two times in the same scope.
+*/
+
+let catsName = "Kitty";
+let quote;
+catsName = "Kat";
+console.log(catsName);
+
+/*
+    "use strict"
+    -Enables strict mode which catches common coding mistakes and unsafe actions.
+    -A lot of people use "Use Strict" at the top of a full JS file or just in a function to catch coding mistakes. 
+
+*/
+
+
+
+
+/*Compare Scopes of the Var and Let Keywords
+-When you declare a variable with var, it is declared globally or locally if declared inside a function.
+-The scope of let is limited to the blcok statement or expression that it was declared in. 
+*/
+
+//var
+
+function checkScope() {
+    "use strict";
+    var i = "function scope";
+    if (true) {
+        var i = "block scope";
+        console.log("Block scope i is: ", i);
+    }
+    console.log("Function scope i is: ", i);
+    return i;
+}
+
+checkScope();
+
+//let
+
+function checkScope() {
+    "use strict";
+    let i = "function scope";
+    if (true) {
+        let i = "block scope";
+        console.log("Block scope i is: ", i);
+    }
+    console.log("Function scope i is: ", i);
+    return i;
+}
+
+checkScope();
