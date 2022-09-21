@@ -1605,3 +1605,23 @@ function checkScope() {
 }
 
 checkScope();
+
+
+
+/* Declare a Read-Only variable with the const Keyword
+-Const has all teh feature of let but it's also ready-only.
+-If you declare a variable with the const keyword, you can't reassign a const.
+-If you never want to reassign a variable, always use const, so you don't accidentally reassign the variable when you
+don't mean to. 
+-When using const it's very common to use ALL CAPITAL LETTERS.  
+-Should mainly only use let and const. Very rare circumstances where you should use var.
+*/
+
+function printManyTimes(str) {
+    "use strict";
+    const SENTENCE = str + " is cool!";
+    for (let i =0; i < str.length; i +=2) {
+        console.log(SENTENCE);
+    }
+}
+printManyTimes("freeCodeCanp");
