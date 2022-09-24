@@ -1625,3 +1625,59 @@ function printManyTimes(str) {
     }
 }
 printManyTimes("freeCodeCanp");
+
+
+
+/* Mutate an Array Declared with Const
+-while you can't reassign a variable declare with const, you can mutate an array.
+*/
+
+const s = [5, 7, 2];
+function editInPlace() {
+    "use strict";
+    s[0] = 2;
+    s[1] = 5;
+    s[2] = 7; 
+}
+editInPlace();
+
+console.log(s);
+
+
+/* Prevent Object Mutation
+-A const declaration alone doesn't protect your data from mutation.
+-Object.freeze prevents data mutation.
+-Whenever you have an object and you don't want any of the items in the object to change.
+*/
+
+function freezeObj() {
+    "use strict";
+    const MATH_CONSTANTS = {
+        PI: 3.14
+    };
+    
+    Object.freeze(MATH_CONSTANTS);
+
+    try {
+        MATH_CONSTANTS.PI = 99;
+    } catch(ex) {
+        console.log(ex);
+    }
+    return MATH_CONSTANTS.PI;
+}
+
+const PI = freezeObj();
+console.log(PI);
+
+
+// Use Arrow Functions to Write Concise Anonymous Functions
+
+var magic = () =>  new Date();
+
+
+// Write Arrow Functions with Parameters
+
+var myConcat = (arr1, arr2) =>  arr1.concat(arr2);
+
+
+console.log(myConcat([1,2], [3,4,5]));
