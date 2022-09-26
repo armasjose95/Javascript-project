@@ -1681,3 +1681,85 @@ var myConcat = (arr1, arr2) =>  arr1.concat(arr2);
 
 
 console.log(myConcat([1,2], [3,4,5]));
+
+
+
+
+/* Write Higher order Arrow Functions
+-Arrow functions work realy well with higher order fuctions such as map, filter, and reduce.
+-Higher order functions take functions as arguments for processing collections of data. 
+-Whenever one function takes another function as an argument, should use an arrow function.
+*/
+
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+
+const squareList = (arr) => {
+    const squaredIntegers = arr.filter(num => Number.isInteger(num) && num >0).map(x => x * x);
+    return squaredIntegers;
+};
+    
+const squaredIntegers = squareList(realNumberArray);
+console.log(squaredIntegers);
+
+
+
+
+/* Default Parameters
+-Create more flexible functions.
+-Kicks in when the argument is not specefied or is undefined
+*/
+
+
+const increment = (function() {
+    return function increment(number, value = 1) {
+        return number + value;
+    };
+})();
+
+console.log(increment(5, 2));
+console.log(increment(5));
+
+
+/* Use the Rest Operator with Function Parameters
+-Rest Operator allows you to create a function that takes any variable amount number of arguments. 
+-The rest operatot is three dots.
+*/
+
+/*const sum = (function() {
+    return function sum(...args) {
+        return args.reduce((a, b) => a + b, 0);
+    };
+})();
+console.log(sum(1, 2, 3));
+*/
+
+/* Use the Spread Operator to Evaluate Arrays In-Place
+-Looks just like the rest operator(...). 
+-Takes an already existing array or spreads it out into its indivdual parts.
+-Can only use it in an argument to a function or in an array literal.
+*/
+
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+(function() {
+    arr2 = [...arr1];
+    arr1[0] = 'potato'
+})();
+console.log(arr2);
+
+
+/* Use Destructuring Assignment to Assign Variables from Objects
+-Special syntax for neatly assigning values taken directly from an object to a variable
+
+
+var voxel = {x: 3.6, y: 7.4, z: 6.54};
+
+//Old way to do so
+var x = vowel.x;
+var y = vowel.y;
+var z = vowel.z;
+//
+
+const { x : a , y : b, z : c} = voxel;
+console.log(voxel);
+*/
