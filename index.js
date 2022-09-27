@@ -1763,3 +1763,60 @@ var z = vowel.z;
 const { x : a , y : b, z : c} = voxel;
 console.log(voxel);
 */
+
+
+const AVG_TEMPERATURES = {
+    today: 77.5,
+    tomorrow: 79
+};
+
+function getTempOfTmrw(avgTemperatures) {
+    "use strict";
+    const {tomorrow : tempOfTomorrow} = avgTemperatures;
+    return tempOfTomorrow;
+}
+
+console.log(getTempOfTmrw(AVG_TEMPERATURES));
+
+
+
+//  Destructuring Assignment with Nested Objects
+
+const LOCAL_FORECAST = {
+    today: {min: 72, max: 83},
+    tomorrow: { min: 73.3, max: 84.6}
+};
+
+function getMaxOfTmrw(forecast){
+    "use strict";
+
+    const {tomorrow: {max: maxofTomorrow}} = forecast;
+    return maxofTomorrow;
+}
+
+console.log(getMaxOfTmrw(LOCAL_FORECAST));
+
+
+
+
+/*  Use Destructuring Assignment to Assign Variables from Arrays
+-You can't specify  which element from the array to go into a variable. Just goes in order.
+-Can add commas with nothing in it till you get to the element you want in the array and then add a variable. 
+*/
+
+const [z, x, , y] = [1, 2, 3, 4, 5, 6];
+console.log(z, x, y);
+
+
+//You can use destructuring of arrays to switch the places of variables.
+
+let m = 8, n = 6;
+(() => {
+    "use strict";
+    [m, n] = [n, m]
+})();
+
+console.log(m);
+console.log(n);
+
+
