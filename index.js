@@ -1819,4 +1819,57 @@ let m = 8, n = 6;
 console.log(m);
 console.log(n);
 
+/* Use Destructurng Assignment with the Rest Operator
+-Used to reassign array elements.
 
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+function removeFirstTwo(list) {
+    const [ , , ...arr] = list;
+    return arr;
+}
+
+const arr = removeFirstTwo(source);
+console.log(arr);
+console.log(source);
+
+*/
+
+
+/* Use Destructurng Assignment to Pass an Object as a Function's Parameters 
+-Commonly used with API calls.
+-Can use destructuring to get it down to what we actually want to work with.
+*/
+
+const stats = {
+    max: 56.78,
+    standard_deviation: 4.34,
+    median: 34.54,
+    mode: 23.87,
+    min: -0.75,
+    average: 35.85
+};
+const half = (function() {
+    return function half({max, min}) {
+        return (max + min) / 2.0;
+    };
+})();
+console.log(stats);
+console.log(half(stats));
+
+/* Creating Strings using Template Literals
+-Special kind of string that makes creating complex strings easier. 
+-Make thme with a backtick: ` `
+-Would be in place of using a quotaion, a single, or double quotation mark.
+-You can make multi-line strings.
+-Can add single or double quotation marks right in the string & you don;t have to escape them.
+-Can put variables right in the string. 
+*/
+
+const person = {
+    name: "JB",
+    age: 17
+};
+const greeeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+console.log(greeeting);
