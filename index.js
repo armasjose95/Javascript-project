@@ -1873,3 +1873,36 @@ const greeeting = `Hello, my name is ${person.name}!
 I am ${person.age} years old.`;
 
 console.log(greeeting);
+
+
+const result = {
+    success: ["max-lenght", "no-amd", "prefer-arrow-functions"],
+    failure: ["no-var", "var-on-top", "linebreak"],
+    skipped: ["id-blacklist", "no-dup-keys"]
+};
+function makeList(arr) {
+    const resultDisplayArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        resultDisplayArray.push(`<li class ="text-warning" >${arr[i]}</li> `)
+    }
+    return resultDisplayArray;
+}
+const resultDisplayArray = makeList(result.failure);
+
+console.log(resultDisplayArray);
+
+
+/* Write Concise Object Literal Declarations Using Simple Fields
+-Easily defining object literals
+-If you know that you want to create an object where the key values is the name of the variable and 
+the value is the value of the variable. 
+*/
+
+const createPerson = (name, age, gender) => ( { name, age, gender});
+
+console.log(createPerson("Jose Armas", 70, "male"));
+
+
+/* Write Concise Declarative Functions
+-
+*/
