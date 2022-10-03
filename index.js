@@ -1904,5 +1904,96 @@ console.log(createPerson("Jose Armas", 70, "male"));
 
 
 /* Write Concise Declarative Functions
--
+-An object can contain a function.
+-Can get rid of function keyword and colon.
 */
+
+const bicycle = {
+    gear: 2,
+    setGear(newGear) {
+        "use strict";
+        this.gear = newGear;
+    }
+};
+
+bicycle.setGear(3);
+console.log(bicycle.gear);
+
+
+
+/* Use class Syntax to Define a Constructor Function
+-Syntax to create objects using the class keyword.
+*/
+
+class spaceShuttle {
+constructor(targetPlanet) {
+    this.targetPlanet = targetPlanet;
+    }
+}
+var zeus = new spaceShuttle('Jupiter');
+
+console.log(zeus.targetPlanet)
+
+function makeClass() {
+    class vegtable{
+        constructor(name) {
+            this.name = name;
+        }
+    }
+    return vegtable;
+}
+
+const vegtable = makeClass();
+const carrot = new vegtable('carrot');
+console.log(carrot.name)
+
+
+
+
+
+/* Use getters and setters to Control Access to an Object
+-With the class object you often want to obtain values from the object and set a value of property within an object.
+-Often called getters and setters
+-Getter functions are meant to simply return or get the value of an object's private variable to the user
+without the user directly accessing the private variable.
+-Can have any number of code lines in this setter to do different calculations before you set it 
+or calculations before you get the property.
+*/
+/*
+class book {
+    constructor(author) {
+        this._author = author;
+    }
+
+    get writer(){
+        return this._author;
+    }
+
+    set writer(updatedAuthor) {
+        this._author = updatedAuthor;
+    }
+}
+*/
+
+function makeClass() {
+    class thermostat {
+        constructor(temp) {
+            this._temp = 5/9 * (temp - 32);
+        }
+        get temperature(){
+            return this._temp;
+        }
+        set temperature(updatedTemp){
+            this._temp = updatedTemp;
+        }
+    }
+    return thermostat;
+}
+
+const thermostat = makeClass();
+const thermos = new thermostat(76);
+let temp = thermos.temperature;
+thermos.temperature = 26;
+temp = thermos.temperature;
+console.log(temp);
+
