@@ -1609,7 +1609,7 @@ checkScope();
 
 
 /* Declare a Read-Only variable with the const Keyword
--Const has all teh feature of let but it's also ready-only.
+-Const has all the feature of let but it's also ready-only.
 -If you declare a variable with the const keyword, you can't reassign a const.
 -If you never want to reassign a variable, always use const, so you don't accidentally reassign the variable when you
 don't mean to. 
@@ -1997,3 +1997,33 @@ thermos.temperature = 26;
 temp = thermos.temperature;
 console.log(temp);
 
+// Variables cont.
+
+//can do calculations with #s
+let life = 100;
+life = 85;
+life = life - 10;
+console.log(life);
+
+//string
+var name = "Dev Jose";
+console.log(name);
+
+var checkout = true; // boolean
+
+var box; //undefined. Variabel there but no value
+
+
+/*Functions-set of code to do something
+
+const myName = "Jose the Dev"; //global
+
+
+function toUpper(text) {
+    const upperCase = text.toUpperCase();
+    console.log(upperCase);  
+} 
+
+toUpper(myName);
+
+*/
