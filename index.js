@@ -2027,3 +2027,40 @@ function toUpper(text) {
 toUpper(myName);
 
 */
+
+//if else statements
+
+const age = 27;
+
+if (age => 21){
+    console.log("Let's pour you a beer");
+} else if (age < 15){
+    console.log("Get out of line man!");
+}
+else {
+    console.log("You're not old enougH!");
+}
+
+
+const dice1 = 6;
+const dice2 = 3;
+
+if (dice1 === 6 && dice2 === 6) {
+    console.log("You rolled a double");
+} else {
+    console.log("You didn't");
+}
+
+
+
+// arrays-variables you can store multiple elements in
+
+const schedule = ['Wake Up', 'Work Out', 'Shower'];
+
+schedule.push('Work');
+//schedule.pop();  Removes last element of an array 
+//schedule.shift();  Removes 1st element of an array 
+//schedule.unshift('new element'); adds an element to beginning of an array
+
+console.log(schedule)
+console.log(schedule.indexOf('Wake Up')); //looks for element's position in array
