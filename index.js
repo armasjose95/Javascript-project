@@ -2064,3 +2064,65 @@ schedule.push('Work');
 
 console.log(schedule)
 console.log(schedule.indexOf('Wake Up')); //looks for element's position in array
+
+
+
+//objects-instead of being called variables, called properties
+
+const user = {
+    name: 'jose',
+    age: 27,
+    purchases: [ 'phone', 'car', 'laptop'],
+
+    sayName: function(){
+        console.log(this.name)
+    }
+};
+
+console.log(user.purchases)
+
+
+user.sayName(); // when function gets invoked, then key word "this" gets assigned
+
+
+// functions inside objects called methods. Left of the dot is what is getting called for.
+
+
+
+//for loops
+
+
+const coolNames = ["Ed", "John", "Maria", "Eliza"];
+
+for (coolName of coolNames) {
+    console.log(coolNames);
+} // ran 4 times
+
+for (coolName of coolNames) {
+    console.log(`Hello there ${coolName}`);
+} // runs indidual names one at a time
+
+
+for (coolName of coolNames) {
+    if(coolName === 'Maria'){
+    console.log(`Maria is in my list`);
+    }
+} 
+
+
+for (coolName of coolNames) {
+    console.log(coolName);
+    if(coolName === 'Maria'){
+    console.log(`Maria is in my list`);
+    break;
+    }
+} 
+
+// while loops- as long as statement is true, it will keep looping
+
+
+let loading = 0;
+while(loading < 100) {
+    console.log('Site still loading')
+    loading++; // same as loading += 1
+}
