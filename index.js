@@ -2126,3 +2126,16 @@ while(loading < 100) {
     console.log('Site still loading')
     loading++; // same as loading += 1
 }
+
+
+/*
+const elementList = elementFromHtml('
+    <ul> 
+        <li>Dcode</li>
+    </ul>
+
+');
+
+document.body.appendChild(elementList)
+
+*/

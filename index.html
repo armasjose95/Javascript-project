@@ -8,6 +8,13 @@
   </head>
   <body>
     <script>
+      function elementFromHtml(html) {
+        //taking html & injecting it into the template & return the 1st child of template's doc fragment
+        const template = document.createElement("template"); //template element used to store html as a template, which you can then use later on.
+
+        template.innerHTML = html.trim(); //trimming off white space to left & right of string, dont want white space entering our inner html
+        return template.content.firstElementChild; //allows vs code know that its going to give you an element
+      }
       console.log('Hello World")');
     </script>
   </body>
